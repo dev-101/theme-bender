@@ -177,7 +177,6 @@
                 <div class="resp-wrapper">
                     <form action="<?php echo osc_base_url(true); ?>" method="post" name="comment_form" id="comment_form">
                         <fieldset>
-
                             <input type="hidden" name="action" value="add_comment" />
                             <input type="hidden" name="page" value="item" />
                             <input type="hidden" name="id" value="<?php echo osc_item_id(); ?>" />
@@ -210,10 +209,12 @@
                                     <?php CommentForm::body_input_textarea(); ?>
                                 </div>
                             </div>
+                            <div class="control-group">
+                                <?php osc_run_hook('item_comment_form', osc_item_id()); ?>
+                            </div>
                             <div class="actions">
                                 <button type="submit"><?php _e('Send', 'bender'); ?></button>
                             </div>
-
                         </fieldset>
                     </form>
                 </div>
