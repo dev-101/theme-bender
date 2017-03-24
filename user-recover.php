@@ -30,7 +30,7 @@
         <h1><?php _e('Recover your password', 'bender'); ?></h1>
     </div>
     <div class="resp-wrapper">
-        <form action="<?php echo osc_base_url(true); ?>" method="post" >
+        <form name="user-recover" action="<?php echo osc_base_url(true); ?>" method="post" >
         <input type="hidden" name="page" value="login" />
         <input type="hidden" name="action" value="recover_post" />
         <div class="control-group">
