@@ -31,15 +31,16 @@
     </div>
     <div class="resp-wrapper">
         <form name="recover_password" id="recover_password" action="<?php echo osc_base_url(true); ?>" method="post" >
-        <input type="hidden" name="page" value="login" />
-        <input type="hidden" name="action" value="recover_post" />
-        <div class="control-group">
-            <label class="control-label" for="email"><?php _e('E-mail', 'bender'); ?></label>
-            <div class="controls">
+            <input type="hidden" name="page" value="login" />
+            <input type="hidden" name="action" value="recover_post" />
+            <div class="control-group">
+                <label class="control-label" for="email"><?php _e('E-mail', 'bender'); ?></label>
+                <div class="controls">
                 <?php UserForm::email_text(); ?>
                 <?php osc_show_recaptcha('recover_password'); ?>
+                </div>
             </div>
-        </div>
+            <?php osc_run_hook('user_recover_form'); ?>
             <div class="control-group">
                 <div class="controls">
                     <button type="submit" class="ui-button ui-button-middle ui-button-main"><?php _e("Send me a new password", 'bender');?></button>
